@@ -1,0 +1,27 @@
+{
+  "name": "senadores-detalle",
+  "description": "Detalle complementario a la información base de cada senador.",
+  "author": "YerkoPalma",
+  "version": "0.1.0",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "standard --verbose | snazzy && ava"
+  },
+  "repository": "YerkoPalma/senadores-detalle",
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "p-map": "^1.1.0",
+    "scraperjs": "^1.2.0",
+    "senadores-base": "^1.1.0"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "snazzy": "^5.0.0",
+    "standard": "^8.6.0"
+  }
+}
