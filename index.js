@@ -19,12 +19,12 @@ module.exports = function senadoresDetalle (query) {
         $('#main .seccion1 .aright ul.sans').first().find('li').each(function () {
           if ($(this).text().indexOf('Superficie') > -1) {
             representacion.superficie = {
-              cantidad: $(this).text().split(' ')[1],
+              cantidad: parseInt($(this).text().split(' ')[1].replace(/\./g, '')),
               medida: $(this).text().split(' ')[2]
             }
           }
           if ($(this).text().indexOf('Habitantes') > -1) {
-            representacion.habitantes = $(this).text().split(' ')[1].replace(/\./g, '')
+            representacion.habitantes = parseInt($(this).text().split(' ')[1].replace(/\./g, ''))
           }
           if ($(this).text().indexOf('Circunscripción') > -1) {
             representacion.circunscripcion = $(this).text().split(' ').slice(1).join(' ')
@@ -34,15 +34,14 @@ module.exports = function senadoresDetalle (query) {
               return elem.replace(/,/g, '')
             }).filter(el => {
               return !isNaN(el)
-            })
+            }).map(e => parseInt(e))
           }
         })
-        representacion.comunas = $('.bajada').text().split(',')
-        const comisiones = $('#div_comisiones_senadores table tr').map(function () {
-
+        representacion.comunas = $('.bajada').text().split(',').map(comuna => comuna.trim())
+        const enlaces = $('#main .seccion1 .aright ul.sans').eq(1).find('li a').map(function () {
+          return $(this).attr('href')
         }).get()
-        const enlaces = []
-        return Object.assign(senador, { representacion, comisiones, enlaces })
+        return Object.assign(senador, { representacion, enlaces })
       })
   }
   return pMap(senadoresBase, mapper)
