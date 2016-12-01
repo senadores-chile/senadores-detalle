@@ -32,14 +32,7 @@ nombre: 'Zaldívar Larraín, Andrés',
     circunscripcion: 10,
     comunas: ['sad'. 'asd', 'wer']
   },
-  comisiones: [{
-    nombre: 'de educacion',
-    tipo: 'permanente',
-    fecha: 321354,
-    calidad: 'permanente'
-  }, {
-    // ...
-  }]
+  enlaces: []
 */
 ```
 
