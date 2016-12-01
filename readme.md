@@ -43,6 +43,11 @@ nombre: 'Zaldívar Larraín, Andrés',
 */
 ```
 
+## Otros enlaces
+
+- [senadores-base](https://github.com/YerkoPalma/senadores-base) - Información basica y estatica de los senadores actuales de Chile.
+- [senadores-asistencia](https://github.com/YerkoPalma/senadores-asistencia) - Observador de la asistencia de senadores tanto a sesiones de sala como a comisiones del senado de Chile.
+
 ## Licencia
 
 [MIT](/license) © [Yerko Palma](https://github.com/YerkoPalma).
