@@ -1,6 +1,12 @@
 import test from 'ava'
 import senadoresDetalle from './'
 
+test('senadores-detalle fails when no senator', t => {
+  return senadoresDetalle(112233)
+    .then(() => t.fail())
+    .catch(() => t.pass())
+})
+
 test('senadores-detalle works', async t => {
   t.plan(6)
 

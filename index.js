@@ -10,6 +10,7 @@ const URL_DETALLE = 'http://www.senado.cl/appsenado/index.php?mo=senadores&ac=fi
 // (any, obj) -> arr
 module.exports = function senadoresDetalle (query) {
   const senadoresBase = senadores(query)
+  if (!senadoresBase || senadoresBase.length < 1) return Promise.reject(new Error('No se encontraron senadores para ' + query))
   const mapper = senador => {
     const url = URL_DETALLE.replace(/:senador-id:/, senador.id)
     return scraperjs.StaticScraper.create()
